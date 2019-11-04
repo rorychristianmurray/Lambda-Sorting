@@ -9,7 +9,10 @@ test_arr = [
     "item6",
 ]
 
+
 def sortbox(arr):
-    print (arr)
+    print(arr)
+    print("length : ", len(arr))
+
 
 sortbox(test_arr)

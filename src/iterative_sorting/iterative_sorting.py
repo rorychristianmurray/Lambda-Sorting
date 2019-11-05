@@ -42,6 +42,28 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
 
+    # we get a count which is the length of the array
+    count = len(arr)
+    print(f"count: {count}")
+
+    # for every element of the array
+    # need to use a while loop to keep it going after
+    # the first return
+
+    # while arr[i] < arr[i - 1] or arr[i] > arr[i + 1]:
+
+    while count > 0:
+        for i in range(0, len(arr) - 1):
+            print("arr[i] : ", arr[i])
+            print("arr[i + 1] : ", arr[i + 1])
+            print("arr[i - 1] : ", arr[i - 1])
+            if arr[i] <= arr[i + 1]:
+                count -= 1
+                print(f"count: {count}")
+            else:
+                arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                count = len(arr)
+
     return arr
 
 

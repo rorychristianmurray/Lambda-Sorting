@@ -1,5 +1,5 @@
-data1 = [12, 97, 1, 1024, 7,  6, 846, 106]
-data2 = [5, 9, 3, 7, 2, 8, 1, 6]
+data1 = [1, 2, 3, 4, 5, 6, 7, 8]
+data2 = [100, 101, 102, 103, 104, 105, 106, 107]
 
 # TO-DO: complete the helper function below to merge 2 sorted arrays
 
@@ -15,50 +15,27 @@ def merge(arrA, arrB):
     merged_arr = [0] * elements
     # TO-DO
 
-    # first off, figure out what merged_arr is
-    print("merged_arr", merged_arr)
-
-    # check whats in arrA and arrB
-    print("arrA : ", arrA)
-    print("arrB : ", arrB)
-
-    # create index tracker for arrA and arrB
-    idxA = 0
-    idxB = 0
-
-
-# for loop isn't really working here, because we need
-# the indexes of the arrays. Why don't we switch to
-# using a range based on the length of the arrays
-# instead of items w/in the arrays
-    for i in range(0, len(arrA)):
-        print(f"i : {i}")
-        print(f"arrA[i] : {arrA[i]}")
-        for ib in range(0, len(arrB)):
-            # if the value of item in arrA is larger
-            # than value of item in arrB, insert it into
-            # arrB at the index after the current item in arrB
-            # (moving arrB item to the left)
-            if arrA[i] > arrB[ib]:
-                print("bigger")
-
-            # if the value of item in arrA is smaller
-            # than value of item in arrB, insert it into
-            # arrB at the index of the current item in arrB
-            # (moving arrB item to the right)
-            if arrA[i] < arrB[ib]:
-                print("smaller")
-            print(f"ib : {ib}")
-            print(f"arr[ib] : {arrB[ib]}")
-
-    #     print(f"1. merged_arr[i] : {merged_arr[i]}")
-    #     merged_arr[i] = 1
-    #     print(f"2. merged_arr[i] : {merged_arr[i]}")
+    for i in range(elements):
+        print(
+            f"i : {i}\n arrA : {arrA}\n arrB : {arrB}\n merged_arr : {merged_arr}\n\n\n")
+        # if length of arrA is 0, then move items from
+        # beginning of arrB into the merged_arr by swapping
+        # the values
+        if len(arrA) == 0:
+            merged_arr[i] = arrB.pop(0)
+        elif len(arrB) == 0:
+            merged_arr[i] = arrA.pop(0)
+        # check beginning indexes against each other
+        elif arrA[0] < arrB[0]:
+            merged_arr[i] = arrA.pop(0)
+        else:
+            merged_arr[i] = arrB.pop(0)
 
     return merged_arr
 
 
-merge(data1, data2)
+mester1 = merge(data1, data2)
+print(mester1)
 
 # TO-DO: implement the Merge Sort function below USING RECURSION
 
